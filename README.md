@@ -96,9 +96,11 @@ Note This option should only be enabled with 1 if you’re having problems with 
 
 
 
-[ts-2259](https://issues.apache.org/jira/browse/TS-2259)
+**[ts-2259](https://issues.apache.org/jira/browse/TS-2259)**
 
-日志系统冗余备份 使用 '|' 分割 <CollationHosts> 在 logs_xml.config.
+**日志系统冗余备份**
+
+ 使用 '|' 分割 <CollationHosts> 在 logs_xml.config.
 
 	<CollationHosts = "host1:5000|host2:5000|host3:6000, 209.131.52.129:6000"/>
 
@@ -109,6 +111,7 @@ Note This option should only be enabled with 1 if you’re having problems with 
   
   	<CollationHosts = "host1|host2|host3, host4|host5">
   
+  	
   	两组日志服务器  (host1|host2|host3)和 (host4|host5)
   	
   	host2/host3 是host1的备份
