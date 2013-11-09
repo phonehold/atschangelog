@@ -124,7 +124,7 @@ Note This option should only be enabled with 1 if you’re having problems with 
   
 **[ts-2008](https://issues.apache.org/jira/browse/TS-2008)**
   
-支持多条后续规则
+支持多条后缀规则
 
 	dest_domain=www.test.com suffix=jpeg,js,css,html,bc,bd ttl-in-cache=1m
 	
