@@ -33,3 +33,16 @@
 
 `CONFIG proxy.config.log.custom_logs_enabled INT 1` 配置customlog 的时候注意不能再引用这些字段 ()
 
+
+[ts-2245](TS-2245)
+
+增加4个 cache 控制项（解决内容重复缓存 --->content duplications in cache）
+建议值为2 (安全选项，如果对自己的内容有更好的把握，可以设置为1 比如图片类的应用)
+
+proxy.config.http.cache.ignore_accept_mismatch
+proxy.config.http.cache.ignore_accept_language_mismatch
+proxy.config.http.cache.ignore_accept_encoding_mismatch
+proxy.config.http.cache.ignore_accept_charset_mismatch
+
+
+
