@@ -96,3 +96,27 @@ Note This option should only be enabled with 1 if you’re having problems with 
 
 
 
+[ts-2259](https://issues.apache.org/jira/browse/TS-2259)
+
+日志系统冗余备份 使用 '|' 分割 <CollationHosts> 在 logs_xml.config.
+
+	<CollationHosts = "host1:5000|host2:5000|host3:6000, 209.131.52.129:6000"/>
+
+  	当host1 挂掉，则使用host2 和host 3做为备份，日志会传到host2  如果host2 也挂掉，则传到host3 
+  	直到host1 或host2 正常为止。
+  
+  
+  
+  	<CollationHosts = "host1|host2|host3, host4|host5">
+  
+  	两组日志服务器  (host1|host2|host3)和 (host4|host5)
+  	
+  	host2/host3 是host1的备份
+  	
+  	host5 是host4的备份
+  	
+  	所有的日志都会传到两组服务器中去，而两组服务器中，只会选择第一个链接的服务器做为传输机器。
+
+  
+   
+  
