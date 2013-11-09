@@ -96,6 +96,7 @@ Note This option should only be enabled with 1 if you’re having problems with 
 
 
 
+
 **[ts-2259](https://issues.apache.org/jira/browse/TS-2259)**
 
 **日志系统冗余备份**
@@ -121,5 +122,12 @@ Note This option should only be enabled with 1 if you’re having problems with 
   	所有的日志都会传到两组服务器中去，而两组服务器中，只会选择第一个链接的服务器做为传输机器。
 
   
-   
+**[ts-2008](https://issues.apache.org/jira/browse/TS-2008)**
   
+支持多条后续规则
+
+	dest_domain=www.test.com suffix=jpeg,js,css,html,bc,bd ttl-in-cache=1m
+	
+支持* 匹配
+
+	dest_domain=www.test.com suffix=* ttl-in-cache=1m
