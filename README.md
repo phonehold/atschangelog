@@ -159,4 +159,7 @@ Note This option should only be enabled with 1 if you’re having problems with 
 **[ts-2136](https://issues.apache.org/jira/browse/TS-2136)**
 
 the first proxy.config.http.accept_no_activity_timeout is invalid
-	非活动的超时时间 不生效 （导致链接不释放）
+
+非活动的超时时间 不生效 （导致链接不释放）
+
+****
