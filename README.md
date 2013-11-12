@@ -148,7 +148,9 @@ Note This option should only be enabled with 1 if you’re having problems with 
 	
 	Subsequent requests with keep-alive on the same connection will correctly trigger the active_timeout_in.
 
-	如果第一个是慢链接请求，那么proxy.config.http.transaction_active_timeout_in将不会触发，是因为超时事件在触发前被取消了。
+	如果第一个是慢链接请求，那么proxy.config.http.transaction_active_timeout_in 
+	
+	将不会触发，是因为超时事件在触发前被取消了。
 	
 	BTW: 大量慢链接请求，可能起发链接数堆积。
 	
@@ -157,3 +159,4 @@ Note This option should only be enabled with 1 if you’re having problems with 
 **[ts-2136](https://issues.apache.org/jira/browse/TS-2136)**
 
 the first proxy.config.http.accept_no_activity_timeout is invalid
+	非活动的超时时间 不生效 （导致链接不释放）
