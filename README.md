@@ -131,3 +131,29 @@ Note This option should only be enabled with 1 if you’re having problems with 
 支持* 匹配
 
 	dest_domain=www.test.com suffix=* ttl-in-cache=1m
+
+****
+
+**[ts-1806](https://issues.apache.org/jira/browse/TS-1086)**
+
+返回304 不正常 （在没有发送 If-Modified-Since 情况下。返回304）
+
+****
+
+**[ts-287](https://issues.apache.org/jira/browse/TS-287)**
+
+	transaction_active_timeout_in does not trigger on the first request of a Keep-Alive connection
+	
+	proxy.config.http.transaction_active_timeout_in does not trigger on a slow request on if the request is the first on a new client connection, because the timeout event is cancelled before it can be triggered.
+	
+	Subsequent requests with keep-alive on the same connection will correctly trigger the active_timeout_in.
+
+	如果第一个是慢链接请求，那么proxy.config.http.transaction_active_timeout_in将不会触发，是因为超时事件在触发前被取消了。
+	
+	BTW: 大量慢链接请求，可能起发链接数堆积。
+	
+****
+
+**[ts-2136](https://issues.apache.org/jira/browse/TS-2136)**
+
+the first proxy.config.http.accept_no_activity_timeout is invalid
